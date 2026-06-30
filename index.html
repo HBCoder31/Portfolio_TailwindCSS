@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Harsh Bohra | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Free Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
       /* ===== CARTOONSH BRUTALIST EFFECTS ===== */
       .brutal-shadow {
@@ -111,10 +113,14 @@
         border-color: #000000;
         box-shadow: 3px 3px 0px 0px #000000;
       }
-      .nav-item svg {
+      .nav-item svg, .nav-item i {
         flex-shrink: 0;
         width: 22px;
         height: 22px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         stroke: #000000;
       }
 
@@ -288,28 +294,24 @@
       </div>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
+        <i class="fa-solid fa-bars text-xl text-black"></i>
       </button>
 
       <div class="nav-items-container" id="navItemsContainer">
         <a href="#Home" class="nav-item active">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <i class="fa-solid fa-house"></i>
           <span class="nav-label">Home</span>
         </a>
         <a href="#about" class="nav-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <i class="fa-solid fa-user"></i>
           <span class="nav-label">About</span>
         </a>
         <a href="#Projects" class="nav-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <i class="fa-solid fa-laptop-code"></i>
           <span class="nav-label">Projects</span>
         </a>
         <a href="#Contact" class="nav-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          <i class="fa-solid fa-envelope"></i>
           <span class="nav-label">Contact</span>
         </a>
       </div>
@@ -347,15 +349,15 @@
               DISCOVER MORE
             </a>
             <!-- <a href="Harsh Bohra CV.pdf" download class="w-full sm:w-auto text-center px-8 py-4 bg-[#fef08a] text-black font-black text-lg border-4 border-black rounded-xl brutal-shadow transition-all flex items-center justify-center gap-2">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <i class="fa-solid fa-download"></i>
               Grab Resume
             </a> -->
           </div>
 
         </div>
 
-        <div class="animate-bounce-subtle mt-12">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        <div class="animate-bounce-subtle mt-12 text-3xl text-black">
+          <i class="fa-solid fa-chevron-down"></i>
         </div>
       </section>
 
@@ -390,12 +392,12 @@
             <div class="reveal bg-[#fafaf9] border-4 border-black p-6 rounded-xl brutal-shadow-sm">
               <h3 class="font-black uppercase text-lg mb-6 text-center text-black border-b-2 border-black pb-3">Tech Stack ⚙️</h3>
               <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-                <div class="bg-[#38bdf8] border-2 border-black px-3 py-2 rounded-lg text-xs font-black brutal-shadow-sm transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 text-center">JavaScript</div>
-                <div class="bg-white border-2 border-black px-3 py-2 rounded-lg text-xs font-black brutal-shadow-sm transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 text-center">Java</div>
-                <div class="bg-[#fef08a] border-2 border-black px-3 py-2 rounded-lg text-xs font-black brutal-shadow-sm transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 text-center">SQL</div>
-                <div class="bg-[#f43f5e] text-white border-2 border-black px-3 py-2 rounded-lg text-xs font-black brutal-shadow-sm transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 text-center">Spring Boot</div>
-                <div class="bg-[#9333ea] text-white border-2 border-black px-3 py-2 rounded-lg text-xs font-black brutal-shadow-sm transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 text-center">AWS</div>
-                <div class="bg-white border-2 border-black px-3 py-2 rounded-lg text-xs font-black brutal-shadow-sm transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 text-center">C++</div>
+                <div class="bg-[#38bdf8] border-2 border-black px-3 py-2 rounded-lg text-xs font-black brutal-shadow-sm transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 text-center flex items-center justify-center gap-1.5"><i class="fa-brands fa-js text-sm"></i> JavaScript</div>
+                <div class="bg-white border-2 border-black px-3 py-2 rounded-lg text-xs font-black brutal-shadow-sm transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 text-center flex items-center justify-center gap-1.5"><i class="fa-brands fa-java text-sm"></i> Java</div>
+                <div class="bg-[#fef08a] border-2 border-black px-3 py-2 rounded-lg text-xs font-black brutal-shadow-sm transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 text-center flex items-center justify-center gap-1.5"><i class="fa-solid fa-database text-xs"></i> SQL</div>
+                <div class="bg-[#f43f5e] text-white border-2 border-black px-3 py-2 rounded-lg text-xs font-black brutal-shadow-sm transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 text-center flex items-center justify-center gap-1.5"><i class="fa-solid fa-leaf text-xs"></i> Spring Boot</div>
+                <div class="bg-[#9333ea] text-white border-2 border-black px-3 py-2 rounded-lg text-xs font-black brutal-shadow-sm transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 text-center flex items-center justify-center gap-1.5"><i class="fa-brands fa-aws text-sm"></i> AWS</div>
+                <div class="bg-white border-2 border-black px-3 py-2 rounded-lg text-xs font-black brutal-shadow-sm transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 text-center flex items-center justify-center gap-1.5"><i class="fa-solid fa-code text-xs"></i> C++</div>
               </div>
             </div>
           </div>
@@ -422,7 +424,7 @@
               </div>
               <div class="p-6 pt-0 flex justify-between items-center gap-2 flex-wrap">
                 <span class="bg-[#38bdf8] text-xs border-2 border-black px-3 py-1 rounded-md font-bold">JavaScript · Full Stack</span>
-                <a href="https://vehicle-requisition-js.vercel.app/" target="_blank" class="bg-[#f43f5e] text-white border-2 border-black px-4 py-1.5 rounded-lg text-sm font-black brutal-shadow-sm hover:bg-rose-600 transition">Live ➜</a>
+                <a href="https://vehicle-requisition-js.vercel.app/" target="_blank" class="bg-[#f43f5e] text-white border-2 border-black px-4 py-1.5 rounded-lg text-sm font-black brutal-shadow-sm hover:bg-rose-600 transition flex items-center gap-1.5">Live <i class="fa-solid fa-up-right-from-square text-xs"></i></a>
               </div>
             </div>
 
@@ -436,7 +438,7 @@
               </div>
               <div class="p-6 pt-0 flex justify-between items-center gap-2 flex-wrap">
                 <span class="bg-[#fef08a] text-xs border-2 border-black px-3 py-1 rounded-md font-bold">C++</span>
-                <a href="https://github.com/HBCoder31/CPU-SCHEDULER-OS-PROJECT.git" target="_blank" class="bg-[#9333ea] text-white border-2 border-black px-4 py-1.5 rounded-lg text-sm font-black brutal-shadow-sm hover:bg-purple-700 transition">Code ➜</a>
+                <a href="https://github.com/HBCoder31/CPU-SCHEDULER-OS-PROJECT.git" target="_blank" class="bg-[#9333ea] text-white border-2 border-black px-4 py-1.5 rounded-lg text-sm font-black brutal-shadow-sm hover:bg-purple-700 transition flex items-center gap-1.5">Code <i class="fa-brands fa-github text-xs"></i></a>
               </div>
             </div>
 
@@ -450,7 +452,7 @@
               </div>
               <div class="p-6 pt-0 flex justify-between items-center gap-2 flex-wrap">
                 <span class="bg-white text-xs border-2 border-black px-3 py-1 rounded-md font-bold">Full Stack</span>
-                <a href="https://github.com/HBCoder31/ANONYMOUS-FEEDBACK-PORTAL.git" target="_blank" class="bg-[#38bdf8] text-black border-2 border-black px-4 py-1.5 rounded-lg text-sm font-black brutal-shadow-sm hover:bg-sky-400 transition">Code ➜</a>
+                <a href="https://github.com/HBCoder31/ANONYMOUS-FEEDBACK-PORTAL.git" target="_blank" class="bg-[#38bdf8] text-black border-2 border-black px-4 py-1.5 rounded-lg text-sm font-black brutal-shadow-sm hover:bg-sky-400 transition flex items-center gap-1.5">Code <i class="fa-brands fa-github text-xs"></i></a>
               </div>
             </div>
 
@@ -464,7 +466,7 @@
               </div>
               <div class="p-6 pt-0 flex justify-between items-center gap-2 flex-wrap">
                 <span class="bg-[#fef08a] text-xs border-2 border-black px-3 py-1 rounded-md font-bold">SQL</span>
-                <a href="https://github.com/HBCoder31/SMART_INVENTORY_MANAGEMENT_DBMS.git" target="_blank" class="bg-[#f43f5e] text-white border-2 border-black px-4 py-1.5 rounded-lg text-sm font-black brutal-shadow-sm hover:bg-rose-600 transition">Code ➜</a>
+                <a href="https://github.com/HBCoder31/SMART_INVENTORY_MANAGEMENT_DBMS.git" target="_blank" class="bg-[#f43f5e] text-white border-2 border-black px-4 py-1.5 rounded-lg text-sm font-black brutal-shadow-sm hover:bg-rose-600 transition flex items-center gap-1.5">Code <i class="fa-brands fa-github text-xs"></i></a>
               </div>
             </div>
 
@@ -494,8 +496,8 @@
               <textarea id="contact-message" name="message" required class="w-full p-4 rounded-xl text-black border-4 border-black bg-[#fafaf9] focus:outline-none focus:bg-white text-base font-bold resize-none transition-all" rows="4" placeholder="Your Message"></textarea>
             </div>
             <div id="form-status" class="hidden border-4 border-black p-4 rounded-xl brutal-shadow-sm font-black text-sm text-center"></div>
-            <button type="submit" class="w-full py-4 bg-[#f43f5e] text-white font-black text-lg border-4 border-black rounded-xl brutal-shadow hover:bg-rose-600 transition duration-200">
-              DISPATCH ✉️
+            <button type="submit" class="w-full py-4 bg-[#f43f5e] text-white font-black text-lg border-4 border-black rounded-xl brutal-shadow hover:bg-rose-600 transition duration-200 flex items-center justify-center gap-2">
+              DISPATCH <i class="fa-solid fa-paper-plane"></i>
             </button>
           </form>
         </div>
@@ -511,14 +513,14 @@
             <p class="text-xs text-slate-600 font-medium">© 2026 All rights reserved.</p>
           </div>
           <div class="flex flex-wrap justify-center gap-3">
-            <a href="https://www.linkedin.com/in/HB31052006/" target="_blank" class="px-4 py-2 bg-white border-2 border-black rounded-lg text-xs font-black brutal-shadow-sm hover:bg-[#38bdf8] transition-colors">
-              LinkedIn
+            <a href="https://www.linkedin.com/in/HB31052006/" target="_blank" class="px-4 py-2 bg-white border-2 border-black rounded-lg text-xs font-black brutal-shadow-sm hover:bg-[#38bdf8] transition-colors flex items-center gap-1.5">
+              <i class="fa-brands fa-linkedin text-sm"></i> LinkedIn
             </a>
-            <a href="https://github.com/HBCoder31" target="_blank" class="px-4 py-2 bg-white border-2 border-black rounded-lg text-xs font-black brutal-shadow-sm hover:bg-[#9333ea] hover:text-white transition-colors">
-              GitHub
+            <a href="https://github.com/HBCoder31" target="_blank" class="px-4 py-2 bg-white border-2 border-black rounded-lg text-xs font-black brutal-shadow-sm hover:bg-[#9333ea] hover:text-white transition-colors flex items-center gap-1.5">
+              <i class="fa-brands fa-github text-sm"></i> GitHub
             </a>
-            <a href="http://www.instagram.com/harsh_bohra31" target="_blank" class="px-4 py-2 bg-white border-2 border-black rounded-lg text-xs font-black brutal-shadow-sm hover:bg-[#f43f5e] hover:text-white transition-colors">
-              Instagram
+            <a href="http://www.instagram.com/harsh_bohra31" target="_blank" class="px-4 py-2 bg-white border-2 border-black rounded-lg text-xs font-black brutal-shadow-sm hover:bg-[#f43f5e] hover:text-white transition-colors flex items-center gap-1.5">
+              <i class="fa-brands fa-instagram text-sm"></i> Instagram
             </a>
           </div>
         </div>
@@ -607,18 +609,11 @@
       const navItemsContainer = document.getElementById('navItemsContainer');
 
       const hamburgerIcon = `
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
+        <i class="fa-solid fa-bars text-xl text-black"></i>
       `;
 
       const closeIcon = `
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <i class="fa-solid fa-xmark text-xl text-black"></i>
       `;
 
       menuToggle.addEventListener('click', () => {
