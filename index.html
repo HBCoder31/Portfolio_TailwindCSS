@@ -354,6 +354,68 @@
       border: 3px solid #000000;
       border-radius: 4px;
     }
+
+    /* ===== ISOMETRIC STACK BUTTONS ===== */
+    .iso-btn {
+      position: relative;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border: 3px solid #000000;
+      border-radius: 12px;
+      transition: transform 0.4s ease;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .iso-btn span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 9px;
+      border: 2px solid #000000;
+      background: #ffffff;
+      transition: all 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .iso-btn .icon-layer {
+      z-index: 10;
+      color: #000000;
+      font-size: 20px;
+    }
+
+    /* Hover effect: skew and rotate the main button */
+    .iso-btn:hover {
+      transform: rotate(-30deg) skew(25deg);
+    }
+
+    /* Stack spacing on hover */
+    .iso-btn:hover span:nth-child(1) { transform: translate(0px, 0px); opacity: 0.2; }
+    .iso-btn:hover span:nth-child(2) { transform: translate(4px, -4px); opacity: 0.4; }
+    .iso-btn:hover span:nth-child(3) { transform: translate(8px, -8px); opacity: 0.6; }
+    .iso-btn:hover span:nth-child(4) { transform: translate(12px, -12px); opacity: 0.8; }
+    .iso-btn:hover span:nth-child(5) { transform: translate(16px, -16px); opacity: 1; }
+
+    /* Custom color schemes for each brand stack */
+    /* LinkedIn */
+    .iso-linkedin:hover span:not(.icon-layer) { background: #38bdf8; }
+    .iso-linkedin:hover .icon-layer { background: #38bdf8; color: #000000; border-color: #000000; }
+    
+    /* GitHub */
+    .iso-github:hover span:not(.icon-layer) { background: #9333ea; }
+    .iso-github:hover .icon-layer { background: #9333ea; color: #ffffff; border-color: #000000; }
+
+    /* Instagram */
+    .iso-instagram:hover span:not(.icon-layer) { background: #f43f5e; }
+    .iso-instagram:hover .icon-layer { background: #f43f5e; color: #ffffff; border-color: #000000; }
   </style>
 </head>
 
@@ -649,18 +711,30 @@
           </div>
           <p class="text-xs text-slate-600 font-medium">© 2026 All rights reserved.</p>
         </div>
-        <div class="flex flex-wrap justify-center gap-3">
-          <a href="https://www.linkedin.com/in/HB31052006/" target="_blank"
-            class="px-4 py-2 bg-white border-2 border-black rounded-lg text-xs font-black brutal-shadow-sm hover:bg-[#38bdf8] transition-colors flex items-center gap-1.5">
-            <i class="fa-brands fa-linkedin text-sm"></i> LinkedIn
+        <div class="flex flex-wrap justify-center gap-6 py-4">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/HB31052006/" target="_blank" class="iso-btn iso-linkedin" aria-label="LinkedIn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="icon-layer"><i class="fa-brands fa-linkedin"></i></span>
           </a>
-          <a href="https://github.com/HBCoder31" target="_blank"
-            class="px-4 py-2 bg-white border-2 border-black rounded-lg text-xs font-black brutal-shadow-sm hover:bg-[#9333ea] hover:text-white transition-colors flex items-center gap-1.5">
-            <i class="fa-brands fa-github text-sm"></i> GitHub
+          <!-- GitHub -->
+          <a href="https://github.com/HBCoder31" target="_blank" class="iso-btn iso-github" aria-label="GitHub">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="icon-layer"><i class="fa-brands fa-github"></i></span>
           </a>
-          <a href="http://www.instagram.com/harsh_bohra31" target="_blank"
-            class="px-4 py-2 bg-white border-2 border-black rounded-lg text-xs font-black brutal-shadow-sm hover:bg-[#f43f5e] hover:text-white transition-colors flex items-center gap-1.5">
-            <i class="fa-brands fa-instagram text-sm"></i> Instagram
+          <!-- Instagram -->
+          <a href="http://www.instagram.com/harsh_bohra31" target="_blank" class="iso-btn iso-instagram" aria-label="Instagram">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="icon-layer"><i class="fa-brands fa-instagram"></i></span>
           </a>
         </div>
       </div>
