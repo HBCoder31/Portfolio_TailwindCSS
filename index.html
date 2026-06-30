@@ -198,23 +198,24 @@
     /* ===== RESPONSIVE NAVBAR FOR SMARTPHONES ===== */
     @media (max-width: 767px) {
       .sidebar-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 72px;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 16px;
-        padding-top: 0;
-        border-right: none;
-        border-bottom: 4px solid #000000;
-        overflow: visible;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 72px !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 0 16px !important;
+        padding-top: 0 !important;
+        border-right: none !important;
+        border-bottom: 4px solid #000000 !important;
+        overflow: visible !important;
+        transition: none !important;
       }
 
       .sidebar-nav:hover {
-        width: 100%;
+        width: 100% !important;
       }
 
       .nav-logo {
@@ -249,23 +250,23 @@
       }
 
       .nav-items-container {
-        position: absolute;
-        top: 68px;
+        position: absolute !important;
+        top: 68px !important;
         /* sits right below the border */
-        left: 0;
-        width: 100%;
-        background: #f43f5e;
-        border-bottom: 4px solid #000000;
+        left: 0 !important;
+        width: 100% !important;
+        background: #f43f5e !important;
+        border-bottom: 4px solid #000000 !important;
         display: none;
-        flex-direction: column;
-        padding: 12px 16px;
-        gap: 8px;
-        z-index: 40;
-        box-shadow: 0 8px 0 0 #000000;
+        flex-direction: column !important;
+        padding: 12px 16px !important;
+        gap: 8px !important;
+        z-index: 40 !important;
+        box-shadow: 0 8px 0 0 #000000 !important;
       }
 
       .nav-items-container.open {
-        display: flex;
+        display: flex !important;
       }
 
       .nav-item {
@@ -586,7 +587,7 @@
           <div
             class="project-card reveal bg-white border-4 border-black rounded-2xl brutal-shadow overflow-hidden flex flex-col justify-between">
             <div>
-              <div class="bg-[#fef08a] border-b-4 border-black p-6 text-center text-5xl">🚗</div>
+              <div class="bg-[#fef08a] border-b-4 border-black p-6 text-center text-5xl text-black"><i class="fa-solid fa-car"></i></div>
               <div class="p-6">
                 <h3 class="text-xl font-black uppercase mb-2">Vehicle Requisition Portal</h3>
                 <p class="text-slate-700 font-medium text-sm">Automated workspace allocation engine for processing and
@@ -605,7 +606,7 @@
           <div
             class="project-card reveal delay-100 bg-white border-4 border-black rounded-2xl brutal-shadow overflow-hidden flex flex-col justify-between">
             <div>
-              <div class="bg-[#38bdf8] border-b-4 border-black p-6 text-center text-5xl">⚡</div>
+              <div class="bg-[#38bdf8] border-b-4 border-black p-6 text-center text-5xl text-black"><i class="fa-solid fa-microchip"></i></div>
               <div class="p-6">
                 <h3 class="text-xl font-black uppercase mb-2">CPU Scheduler Calculator</h3>
                 <p class="text-slate-700 font-medium text-sm">Operating system simulation tracking execution cycles,
@@ -624,7 +625,7 @@
           <div
             class="project-card reveal bg-white border-4 border-black rounded-2xl brutal-shadow overflow-hidden flex flex-col justify-between">
             <div>
-              <div class="bg-[#f43f5e] border-b-4 border-black p-6 text-center text-5xl">🕵️‍♂️</div>
+              <div class="bg-[#f43f5e] border-b-4 border-black p-6 text-center text-5xl text-black"><i class="fa-solid fa-user-secret"></i></div>
               <div class="p-6">
                 <h3 class="text-xl font-black uppercase mb-2">Anonymous Feedback Portal</h3>
                 <p class="text-slate-700 font-medium text-sm">Anonymous feedback system where users can send messages
@@ -642,7 +643,7 @@
           <div
             class="project-card reveal delay-100 bg-white border-4 border-black rounded-2xl brutal-shadow overflow-hidden flex flex-col justify-between">
             <div>
-              <div class="bg-[#fafaf9] border-b-4 border-black p-6 text-center text-5xl">📦</div>
+              <div class="bg-[#fafaf9] border-b-4 border-black p-6 text-center text-5xl text-black"><i class="fa-solid fa-boxes-stacked"></i></div>
               <div class="p-6">
                 <h3 class="text-xl font-black uppercase mb-2">Smart Inventory DBMS</h3>
                 <p class="text-slate-700 font-medium text-sm">Database-driven application with robust relational schema,
