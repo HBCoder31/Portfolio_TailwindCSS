@@ -47,6 +47,17 @@
       }
     }
 
+
+    @keyframes brutal-wiggle {
+  0%, 100% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+    }
+
+.animate-wiggle {
+  animation: brutal-wiggle 3s ease-in-out infinite;
+    }
+
+
     @keyframes float-cartoon {
 
       0%,
@@ -468,13 +479,11 @@
         class="relative z-10 flex flex-col items-center text-center max-w-2xl bg-white border-4 border-black p-8 md:p-12 brutal-shadow rounded-2xl animate-pop-in">
 
         <div class=" select-none animate-float-cartoon mb-6 bg-[#fef08a] border-4 border-black rounded-2xl brutal-shadow-sm w-24 h-24 overflow-hidden transform -rotate-3">
-          <img src="harsh_avatar.png" alt="Harsh Bohra Avatar" class=" select-none w-full h-full object-cover" />
+          <img src="harsh_avatar.png" width="96" height="96" alt="Harsh Bohra Avatar" class="w-full h-full object-cover" />
         </div>
 
-        <span
-          class=" select-none bg-[#9333ea] text-white border-2 border-black text-xs uppercase px-4 py-1.5 rounded-md font-bold tracking-wider mb-4 transform rotate-2 brutal-shadow-sm">
-          WELCOME ABOARD 🚀
-        </span>
+        <span class="select-none bg-[#9333ea] text-white border-2 border-black text-xs uppercase px-4 py-1.5 rounded-md font-bold tracking-wider mb-4 brutal-shadow-sm animate-wiggle inline-block">
+         WELCOME ABOARD 🚀</span>
 
         <h1 class=" select-none text-4xl md:text-6xl font-black mb-4 uppercase tracking-tight text-black leading-none">
           HARSH BOHRA
@@ -539,7 +548,7 @@
             </p>
             <p>
               <strong class="select-none">Current work:</strong><a href="https://vehicle-requisition-js.vercel.app/" target="_blank"
-                class=" select-none text[#38bdf8] underline font-bold hover:text-[#0284c7]">Vehicle Requisition Portal</a><span class="select-none"> (live on
+                class=" select-none text-[#38bdf8] underline font-bold hover:text-[#0284c7]">Vehicle Requisition Portal</a><span class="select-none"> (live on
               Vercel + Render). Targeting </span><strong class="select-none">Expanding into Learning <strong class="select-none">Full Stack Java Developer</strong>
                 <span class="select-none">skills with focus on cloud platforms.</span>  
             </p>
@@ -676,26 +685,26 @@
           <div>
             <label class="block text-sm font-black uppercase mb-2 text-black">Your Name</label>
             <input id="contact-name" name="name" required
-              class="w-full p-4 rounded-xl text-black border-4 border-black bg-[#fafaf9] focus:outline-none focus:bg-white text-base font-bold transition-all"
+              class="w-full p-4 rounded-xl text-black border-4 border-black bg-[#fafaf9] focus:outline-none focus:bg-white focus:ring-4 focus:ring-[#9333ea] text-base font-bold transition-all"
               type="text" placeholder="Your Name" />
           </div>
           <div>
             <label class="block text-sm font-black uppercase mb-2 text-black">Your Email</label>
             <input id="contact-email" name="email" required
-              class="w-full p-4 rounded-xl text-black border-4 border-black bg-[#fafaf9] focus:outline-none focus:bg-white text-base font-bold transition-all"
+              class="w-full p-4 rounded-xl text-black border-4 border-black bg-[#fafaf9] focus:outline-none focus:bg-white focus:ring-4 focus:ring-[#9333ea] text-base font-bold transition-all"
               type="email" placeholder="example@mail.com" />
           </div>
           <div>
             <label class="block text-sm font-black uppercase mb-2 text-black">Your Message</label>
             <textarea id="contact-message" name="message" required
-              class="w-full p-4 rounded-xl text-black border-4 border-black bg-[#fafaf9] focus:outline-none focus:bg-white text-base font-bold resize-none transition-all"
+              class="w-full p-4 rounded-xl text-black border-4 border-black bg-[#fafaf9] focus:outline-none focus:bg-white focus:ring-4 focus:ring-[#9333ea] text-base font-bold resize-none transition-all"
               rows="4" placeholder="Your Message"></textarea>
           </div>
           <div id="form-status"
             class="hidden border-4 border-black p-4 rounded-xl brutal-shadow-sm font-black text-sm text-center"></div>
           <button type="submit"
-            class="w-full py-4 bg-[#f43f5e] text-white font-black text-lg border-4 border-black rounded-xl brutal-shadow hover:bg-rose-600 transition duration-200 flex items-center justify-center gap-2">
-            DISPATCH <i class="fa-solid fa-paper-plane"></i>
+            class="w-full py-4 bg-[#f43f5e] text-white font-black text-lg border-4 border-black rounded-xl brutal-shadow transition-all hover:bg-rose-600 flex items-center justify-center gap-2">
+            DISPATCH <i class="fa-solid fa-paper-plane"></i></button>
           </button>
         </form>
       </div>
