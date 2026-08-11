@@ -144,7 +144,7 @@
     }
 
     .sidebar-nav:hover {
-      width: 210px;
+      width: 230px;
     }
 
     .nav-logo {
@@ -166,12 +166,12 @@
       align-items: center;
       width: calc(100% - 16px);
       margin: 6px 8px;
-      padding: 12px 0 12px 14px;
+      padding: 12px 12px 12px 14px;
       color: #000000;
       text-decoration: none;
       font-size: 1rem;
       font-weight: 800;
-      gap: 16px;
+      gap: 12px;
       border: 3px solid transparent;
       border-radius: 12px;
       white-space: nowrap;
@@ -216,6 +216,30 @@
       display: none;
     }
 
+    .nav-mobile-controls {
+      display: none;
+    }
+
+    .theme-toggle-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #fef08a;
+      border: 3px solid #000000;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 3px 3px 0px 0px #000000;
+      transition: all 0.1s ease;
+      padding: 0;
+    }
+
+    .theme-toggle-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px 0px #000000;
+    }
+
     /* ===== RESPONSIVE NAVBAR FOR SMARTPHONES ===== */
     @media (max-width: 767px) {
       .sidebar-nav {
@@ -242,6 +266,12 @@
       .nav-logo {
         margin-bottom: 0;
         width: auto;
+      }
+
+      .nav-mobile-controls {
+        display: flex !important;
+        align-items: center;
+        gap: 10px;
       }
 
       .menu-toggle {
@@ -335,6 +365,7 @@
 
     .nav-logo,
     .menu-toggle,
+    .nav-mobile-controls,
     .nav-items-container {
       position: relative;
       z-index: 10;
@@ -503,6 +534,16 @@
       color: #ffffff;
     }
 
+    html.dark .theme-toggle-btn {
+      background: #a855f7;
+      border-color: #38bdf8;
+      box-shadow: 3px 3px 0px 0px #38bdf8;
+    }
+
+    html.dark .theme-toggle-btn i {
+      color: #ffffff;
+    }
+
     /* Scrollbar in Dark Mode */
     html.dark ::-webkit-scrollbar-track {
       background: #090d16;
@@ -560,9 +601,15 @@
       </div>
     </div>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
-      <i class="fa-solid fa-bars text-xl text-black"></i>
-    </button>
+    <!-- Mobile Header Controls (Dark Theme Toggle + Hamburger Menu) -->
+    <div class="nav-mobile-controls">
+      <button id="themeToggleHeader" type="button" aria-label="Toggle Dark Mode" class="theme-toggle-btn">
+        <i id="themeIconHeader" class="fa-solid fa-moon text-lg text-black"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars text-xl text-black"></i>
+      </button>
+    </div>
 
     <div class="nav-items-container" id="navItemsContainer">
       <a href="#Home" class="nav-item active">
@@ -581,19 +628,19 @@
         <i class="fa-solid fa-envelope"></i>
         <span class="select-none nav-label">Contact</span>
       </a>
-      <button id="themeToggleNav" type="button" class="nav-item cursor-pointer text-left">
-        <i id="themeIconNav" class="fa-solid fa-moon"></i>
-        <span id="themeTextNav" class="select-none nav-label">Dark Mode</span>
+      <button id="themeToggleNav" type="button" class="nav-item cursor-pointer text-left flex items-center justify-between">
+        <div class="flex items-center gap-3 min-w-0">
+          <i id="themeIconNav" class="fa-solid fa-moon"></i>
+          <span id="themeTextNav" class="select-none nav-label">Dark Mode</span>
+        </div>
+        <div class="nav-label ml-auto flex-shrink-0">
+          <div class="relative w-8 h-4.5 bg-slate-300 dark:bg-purple-900 border-2 border-black dark:border-white rounded-full transition-colors flex items-center px-0.5">
+            <div id="toggleSwitchKnob" class="w-3 h-3 bg-[#fef08a] dark:bg-[#38bdf8] border border-black rounded-full transition-transform duration-200 transform translate-x-0"></div>
+          </div>
+        </div>
       </button>
     </div>
   </nav>
-
-  <!-- Floating Dark Mode Toggle Button -->
-  <button id="themeToggleFloat" aria-label="Toggle Dark Mode"
-    class="fixed top-4 right-4 z-50 p-3 rounded-xl border-4 border-black dark:border-[#38bdf8] bg-[#fef08a] dark:bg-[#a855f7] text-black dark:text-white brutal-shadow transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 cursor-pointer select-none">
-    <i id="themeIconFloat" class="fa-solid fa-moon text-lg"></i>
-    <span id="themeTextFloat" class="hidden sm:inline text-xs font-black uppercase">Dark</span>
-  </button>
 
   <div class="main-content">
 
@@ -1025,26 +1072,32 @@
     updateScrollProgress(); // Run once on load
 
     // ===== DARK MODE TOGGLE CONTROLLER =====
-    const themeToggleFloat = document.getElementById('themeToggleFloat');
-    const themeIconFloat = document.getElementById('themeIconFloat');
-    const themeTextFloat = document.getElementById('themeTextFloat');
+    const themeToggleHeader = document.getElementById('themeToggleHeader');
+    const themeIconHeader = document.getElementById('themeIconHeader');
 
     const themeToggleNav = document.getElementById('themeToggleNav');
     const themeIconNav = document.getElementById('themeIconNav');
     const themeTextNav = document.getElementById('themeTextNav');
+    const toggleSwitchKnob = document.getElementById('toggleSwitchKnob');
 
     function syncThemeUI() {
       const isDark = document.documentElement.classList.contains('dark');
       if (isDark) {
-        if (themeIconFloat) themeIconFloat.className = 'fa-solid fa-sun text-lg text-amber-300';
-        if (themeTextFloat) themeTextFloat.innerText = 'Light';
+        if (themeIconHeader) themeIconHeader.className = 'fa-solid fa-sun text-lg text-amber-300';
         if (themeIconNav) themeIconNav.className = 'fa-solid fa-sun text-amber-300';
         if (themeTextNav) themeTextNav.innerText = 'Light Mode';
+        if (toggleSwitchKnob) {
+          toggleSwitchKnob.classList.add('translate-x-3.5', 'bg-[#38bdf8]');
+          toggleSwitchKnob.classList.remove('translate-x-0', 'bg-[#fef08a]');
+        }
       } else {
-        if (themeIconFloat) themeIconFloat.className = 'fa-solid fa-moon text-lg';
-        if (themeTextFloat) themeTextFloat.innerText = 'Dark';
+        if (themeIconHeader) themeIconHeader.className = 'fa-solid fa-moon text-lg text-black';
         if (themeIconNav) themeIconNav.className = 'fa-solid fa-moon';
         if (themeTextNav) themeTextNav.innerText = 'Dark Mode';
+        if (toggleSwitchKnob) {
+          toggleSwitchKnob.classList.add('translate-x-0', 'bg-[#fef08a]');
+          toggleSwitchKnob.classList.remove('translate-x-3.5', 'bg-[#38bdf8]');
+        }
       }
     }
 
@@ -1054,7 +1107,7 @@
       syncThemeUI();
     }
 
-    if (themeToggleFloat) themeToggleFloat.addEventListener('click', toggleThemeMode);
+    if (themeToggleHeader) themeToggleHeader.addEventListener('click', toggleThemeMode);
     if (themeToggleNav) themeToggleNav.addEventListener('click', toggleThemeMode);
 
     // Sync theme UI state on initial page load
